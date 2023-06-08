@@ -19,7 +19,6 @@ print(transactions.info())
 # hopefully this works
 
 # Summary statistics on amount column
-AAA
 
 # Create isPayment field
 
