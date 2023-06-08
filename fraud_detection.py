@@ -1,4 +1,6 @@
 # Predict Credit Card Fraud: Logistic Regression and create a predictive model to determine if a transaction is fraudulent or not. 
+
+
 import seaborn
 import pandas as pd
 import numpy as np
@@ -13,6 +15,8 @@ print(transactions.head())
 print(transactions.info())
 
 # Number of fraudulent transactions
+
+# hopefully this works
 
 # Summary statistics on amount column
 
