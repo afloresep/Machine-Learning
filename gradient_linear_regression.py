@@ -1,4 +1,3 @@
-import codecademylib3_seaborn
 import matplotlib.pyplot as plt
 
 def get_gradient_at_b(x, y, b, m):
