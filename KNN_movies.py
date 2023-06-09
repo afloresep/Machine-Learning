@@ -1,6 +1,7 @@
 # Importing the necessary variables from the 'movies' module
 from movies import training_set, training_labels, validation_set, validation_labels
 
+## HELLO WORLD!
 
 def distance(movie1, movie2):
     # Initialize the squared difference
