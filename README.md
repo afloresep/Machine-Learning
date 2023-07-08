@@ -29,6 +29,7 @@ The repository currently includes the following examples:
 - *fraud_detection.py* Predict Credit Card Fraud: Logistic Regression and create a predictive model to determine if a transaction is fraudulent or not.
 - *KNN_movies.py*  
 - *Breast_cancer_KNN.py* Project to predict breast cancer from sklearn dataset.  
+- *EmailSimilarity.py* Using Sklearn NB implementation to different dataset to distinguish the difference between emails about hockey and emails about baseball
 
 ## Contributing
 Contributions to this repository are welcome! If you would like to contribute an example or improve an existing one, please follow the guidelines outlined in the CONTRIBUTING.md file.

@@ -23,6 +23,7 @@ stream_handler.setFormatter(formatter)
 file_handler.setFormatter(formatter)
 
 loggger.addHandler(stream_handler)
+logger.addHandler(file_handler)
 """
 Set log level to INFO.
 """
