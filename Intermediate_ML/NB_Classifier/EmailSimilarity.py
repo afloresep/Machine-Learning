@@ -38,7 +38,7 @@ print(classifier.score(train_counts, train_emails.target))
 
 
 """
-Our classifier does a pretty good job distinguishing between soccer emails and hockey emails. But let’s see how it does with emails about really different topics.
+Our classifier does a pretty good job distinguishing between soccer emails and hockey emails. But lets see how it does with emails about really different topics.
 
 Find where you create train_emails and test_emails. Change the categories to be ['comp.sys.ibm.pc.hardware','rec.sport.hockey'].
 
