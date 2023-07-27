@@ -26,6 +26,8 @@ dt2 = DecisionTreeClassifier(max_depth=5)
 #ids are the indices of the bootstrapped sample
 ids = x_train.sample(x_train.shape[0], replace=True, random_state=0).index
 dt2.fit(x_train.loc[ids], y_train[ids])
+# Use .loc/.iloc because we're selecting columns, not rows. 
+
 print(f'Accuracy score of DT on test set (trained using bootstrapped sample): {dt2.score(x_test, y_test).round(4)}')
 # Remember that .loc in pandas allows the return of specified rows and/or columns from that DataFrame 
 '''
