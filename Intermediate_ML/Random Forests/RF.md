@@ -42,3 +42,10 @@ print(f'Accuracy score of aggregated 10 bootstrapped samples: {ba_accuracy.round
 - `ba_pred>=0.5` creates a boolean array where each element indicates whether the corresponding aggregated prediction is greater than or equal to 0.5 (the threshold for the positive class). Everything equal or above 0.5 is now True (or 1) and below 0,5 is False (or 0). Since y_test is the true labels (all 1 or 0), now we can compare how did our model perfom. 
 - `accuracy_score` then calculates the accuracy of these binary predictions compared to the true labels (y_test).
 The final printed output will be the accuracy score of the bagged model on the test data. Bagging helps reduce overfitting and variance in the model by combining predictions from multiple models trained on different subsets of the data. This typically results in improved generalization and better overall performance on unseen data.
+
+
+## 2. Random Feature Selection
+
+When we use a decision tree, all the features are used and the split is chosen as the one that increases the information gain the most. While it may seem counter-intuitive, selecting a random subset of features can help in the performance of an ensemble model. In the following example, we will use a random selection of features prior to model building to add additional variance to the individual trees. While an individual tree may perform worse, sometimes the increases in variance can help model performance of the ensemble model as a whole.
+See `random_feature_selection.py`
+Our target variable for prediction is an acceptability rating, accep, that’s either True or False. For our final features sets, x_train and x_test, the categorical features have been dummy encoded, giving us 15 features in total.
