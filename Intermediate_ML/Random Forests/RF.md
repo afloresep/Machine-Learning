@@ -49,3 +49,28 @@ The final printed output will be the accuracy score of the bagged model on the t
 When we use a decision tree, all the features are used and the split is chosen as the one that increases the information gain the most. While it may seem counter-intuitive, selecting a random subset of features can help in the performance of an ensemble model. In the following example, we will use a random selection of features prior to model building to add additional variance to the individual trees. While an individual tree may perform worse, sometimes the increases in variance can help model performance of the ensemble model as a whole.
 See `random_feature_selection.py`
 Our target variable for prediction is an acceptability rating, accep, that’s either True or False. For our final features sets, x_train and x_test, the categorical features have been dummy encoded, giving us 15 features in total.
+
+Bagging in `scikit-learn`
+The two steps we walked through above created trees on bootstrapped samples and randomly selecting features. These can be combined together and implemented at the same time! Combining them adds an additional variation to the base learners for the ensemble model. This in turn increases the ability of the model to generalize to new and unseen data, i.e., it minimizes bias and increases variance. Rather than re-doing this process manually, we will use scikit-learn‘s bagging implementation, BaggingClassifier(), to do so.
+See `bagging-sklearn.py`.
+
+
+Train and Predict using `scikit-learn`
+Now that we have covered two major ways to combine trees, both in terms of samples and features, we are ready to get to the implementation of random forests! This will be similar to what we covered in the previous exercises, but the random forest algorithm has a slightly different way of randomly choosing features. **Rather than choosing a single random set at the onset, each split chooses a different random set.**
+
+One question to consider is how to choose the number of features to randomly select. Why did we choose 3 in this example? A good rule of thumb is select as many features as the square root of the total number of features. Our car dataset doesn’t have a lot of features, so in this example, it’s difficult to follow this rule. But if we had a dataset with 25 features, we’d want to randomly select 5 features to consider at every split point.
+
+You now have the ability to make a random forest using your own decision trees. However, scikit-learn has a RandomForestClassifier() class that will do all of this work for you! RandomForestClassifier is in the sklearn.ensemble module.
+
+RandomForestClassifier() works almost identically to DecisionTreeClassifier() — the .fit(), .predict(), and .score() methods work in the exact same way.
+
+
+
+# Random Forest Regressor
+Just like in decision trees, we can use random forests for regression as well! It is important to know when to use regression or classification — this usually comes down to what type of variable your target is. Previously, we were using a binary categorical variable (acceptable versus not), so a classification model was used.
+
+We will now consider a hypothetical new target variable, price, for this data set, which is a continuous variable.
+Now, instead of a classification task, we will use scikit-learn‘s RandomForestRegressor() to carry out a regression task.
+See `RandomForestRegressor.py`:
+    - RandomForestRegressor() model named rfr on the training data. Calculate the default scores (the R^2 values here) on the train and test set
+    - Calculate the average price of a car, store it as avg_price. Calculate the MAE (Mean Absolute Error) for the train and test sets
